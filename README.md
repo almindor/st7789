@@ -1,3 +1,7 @@
+
+# **DEPRECATED**
+This crate has been deprecated in favor of [mipidsi](https://github.com/almindor/mipidsi) a new generic driver that contains ST7789 support and should serve as a drop in replacement for this driver.
+
 # st7789
 
 This is a Rust driver library for ST7789 displays using embedded_graphics, embedded_hal, and no_std, no_alloc support. 
