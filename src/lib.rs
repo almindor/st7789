@@ -136,7 +136,7 @@ where
         self.write_command(Instruction::SLPOUT)?; // turn off sleep
         delay_source.delay_us(10_000);
         self.write_command(Instruction::INVOFF)?; // turn off invert
-        self.write_command(Instruction::VSCRDER)?; // vertical scroll definition
+        self.write_command(Instruction::VSCRDEF)?; // vertical scroll definition
         self.write_data(&[0u8, 0u8, 0x14u8, 0u8, 0u8, 0u8])?; // 0 TSA, 320 VSA, 0 BSA
         self.write_command(Instruction::MADCTL)?; // left -> right, bottom -> top RGB
         self.write_data(&[0b0000_0000])?;
@@ -258,7 +258,7 @@ where
     /// * `offset` - scroll offset in pixels
     ///
     pub fn set_scroll_offset(&mut self, offset: u16) -> Result<(), Error<PinE>> {
-        self.write_command(Instruction::VSCAD)?;
+        self.write_command(Instruction::VSCSAD)?;
         self.write_data(&offset.to_be_bytes())
     }
 
